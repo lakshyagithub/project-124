@@ -5,8 +5,15 @@ function setup() {
     
     canvas = createCanvas(550, 550);
     canvas.position(560, 150);
+
+    poseNet = ml5.poseNet(video, modelLoaded);
   }
-  
+  function modelLoaded() {
+      console.log('Model Loaded!');
+  }
+  function save_image() {
+      save('image.png');
+  }
   function draw() {
     background(220);
   }
